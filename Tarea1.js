@@ -21,8 +21,10 @@ class listaCircularDoble{
             while(auxiliar.siguiente != null){
                 auxiliar = auxiliar.siguiente;
             };
+            nuevo_nodo.siguiente = this.primero;
             auxiliar.siguiente = nuevo_nodo;
             nuevo_nodo.anterior = auxiliar;
+            this.primero.anterior = nuevo_nodo;
             
             
            
@@ -32,14 +34,11 @@ class listaCircularDoble{
 
     mostrar(){
         let auxiliar = this.primero;
-        console.log('------ Lista ------')
-        console.log(this.primero.anterior)
-        for (let index = 0; index < 4; index++) {
-            console.log(auxiliar.dato)
-            auxiliar = auxiliar.siguiente
-            
+        console.log('------ Lista ------');
+        while (auxiliar.siguiente != this.primero ) {
+            console.log("->" + auxiliar.dato );
         }
-        
+        console.log("->" + auxiliar.dato );
     }
 }
 
